@@ -119,7 +119,7 @@ end
 
 % denoise the stacked matrix
 [U,S,V] = svd(StackedMatrix,'econ');
-Denoised = U * diag(thresh(diag(S), lam, 0.45/lam, 'firm')) * V';
+Denoised = U * diag(thresh(diag(S), lam, 1/lam, 'atan')) * V';
 
 % Place the estimated patches back in the cube or image
 
